@@ -283,8 +283,7 @@ a{
 }
 .container{
   width: 360px;
-  min-height: 640px;
-  max-height: 640px;
+  height: 100vh;
   overflow: auto;
   background-color: $primary-color;
   position: relative;
