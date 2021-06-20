@@ -17,6 +17,7 @@ export const Restaurant = () => {
 
 
     const [cart, setCart] = useState();
+    const [activeTab, setActiveTab] = useState('bestseller');
     const [order, setOrder] = useState();
     const [swipeDirection, setSwipeDirection] = useState('')
     const [styles, setStyle] = useState({
@@ -152,11 +153,12 @@ export const Restaurant = () => {
                     <div className={`app-restaurant-menu ${swipeDirection === 'Up' ? 'swiped': null}`}>
                         <div className="app-tab">
                             <ul className="app-tab-nav d-flex mb-1">
-                                <li className="active"><button className="btn">Bestsellers</button></li>
-                                <li><button className="btn">Recommended</button></li>
+                                <li onClick={()=>setActiveTab('bestseller')} className={activeTab === 'bestseller'? 'active' : ''}><button className="btn">Bestsellers</button></li>
+                                <li onClick={()=>setActiveTab('recommended')} className={activeTab === 'recommended'? 'active' : ''}><button className="btn">Recommended</button></li>
+                                <li onClick={()=>setActiveTab('value-combos')} className={activeTab === 'value-combos'? 'active' : ''}><button className="btn">Value Combos</button></li>
                             </ul>
                             <div className="app-tab-content">
-                                <div className="app-tab-item py-4">
+                                {activeTab === 'bestseller' && (<div className="app-tab-item py-4">
                                     <h3 className="title mb-2">Bestsellers</h3>
                                     <div className="card d-flex jc-space-between py-4">
                                         <div className="card-content mr-4">
@@ -200,7 +202,99 @@ export const Restaurant = () => {
                                             <button className="btn btn--primary btn--cart d-flex jc-center"><span>+</span><span>Add</span></button>
                                         </div>
                                     </div>
-                                </div>
+                                </div>)}
+
+                                {activeTab === 'recommended' && (<div className="app-tab-item py-4">
+                                    <h3 className="title mb-2">Recommended</h3>
+                                    <div className="card d-flex jc-space-between py-4">
+                                        <div className="card-content mr-4">
+                                            <h5 className="card-title fw-500">Paneer Subz</h5>
+                                            <h6 className="text-light-small">Chicken Biryani Boneless - Serves 4-5</h6>
+                                            <p className="title-sm my-1">₹440</p>
+                                            <p className="text-light-small">In this most enigmatic & treasured recipe of Behrouz.. Read More</p>
+                                        </div>
+                                        <div className="add-to-cart">
+                                            <div className="cart-img"><img src={bhunaMurgh} alt="bhuna Murgh" /></div>
+                                            <button onClick={!cart? addToCart: null} className="btn btn--primary btn--cart d-flex jc-center jc-space-around">
+                                                {cart ? <span onClick={removeFromCart} className="">-</span> : <span>+</span>}
+                                                {cart ? <span>{cart.total}</span> : <span>Add</span>}
+                                                {cart ? <span onClick={addMore}>+</span> : null}
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div className="card d-flex jc-space-between py-4">
+                                        <div className="card-content mr-4">
+                                            <h5 className="card-title fw-500">Zaikedaar Paneer</h5>
+                                            <h6 className="text-light-small">Paneer Biryani, Boneless - Serves 4-5</h6>
+                                            <p className="title-sm my-1">₹1033</p>
+                                            <p className="text-light-small">In this most enigmatic & treasured recipe of Behrouz.. Read More</p>
+                                        </div>
+                                        <div className="add-to-cart">
+                                            <div className="cart-img"><img src={bhunaMurgh} alt="bhuna Murgh" /></div>
+                                            <button className="btn btn--primary btn--cart d-flex jc-center"><span>+</span><span>Add</span></button>
+                                        </div>
+                                    </div>
+
+                                    <div className="card d-flex jc-space-between py-4">
+                                        <div className="card-content mr-4">
+                                            <h5 className="card-title fw-500">Dum Gosht</h5>
+                                            <h6 className="text-light-small">Mutton Biryani, Boneless - Serves 4-5</h6>
+                                            <p className="title-sm my-1">₹1033</p>
+                                            <p className="text-light-small">In this most enigmatic & treasured recipe of Behrouz.. Read More</p>
+                                        </div>
+                                        <div className="add-to-cart">
+                                            <div className="cart-img"><img src={bhunaMurgh} alt="bhuna Murgh" /></div>
+                                            <button className="btn btn--primary btn--cart d-flex jc-center"><span>+</span><span>Add</span></button>
+                                        </div>
+                                    </div>
+                                </div>)}
+
+                                {activeTab === 'value-combos' && (<div className="app-tab-item py-4">
+                                    <h3 className="title mb-2">Value Combos</h3>
+                                    <div className="card d-flex jc-space-between py-4">
+                                        <div className="card-content mr-4">
+                                            <h5 className="card-title fw-500">Lazeez Bhuna Murgh</h5>
+                                            <h6 className="text-light-small">Chicken Biryani Boneless - Serves 4-5</h6>
+                                            <p className="title-sm my-1">₹440</p>
+                                            <p className="text-light-small">In this most enigmatic & treasured recipe of Behrouz.. Read More</p>
+                                        </div>
+                                        <div className="add-to-cart">
+                                            <div className="cart-img"><img src={bhunaMurgh} alt="bhuna Murgh" /></div>
+                                            <button onClick={!cart? addToCart: null} className="btn btn--primary btn--cart d-flex jc-center jc-space-around">
+                                                {cart ? <span onClick={removeFromCart} className="">-</span> : <span>+</span>}
+                                                {cart ? <span>{cart.total}</span> : <span>Add</span>}
+                                                {cart ? <span onClick={addMore}>+</span> : null}
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div className="card d-flex jc-space-between py-4">
+                                        <div className="card-content mr-4">
+                                            <h5 className="card-title fw-500">Dum Gosht</h5>
+                                            <h6 className="text-light-small">Mutton Biryani, Boneless - Serves 4-5</h6>
+                                            <p className="title-sm my-1">₹1033</p>
+                                            <p className="text-light-small">In this most enigmatic & treasured recipe of Behrouz.. Read More</p>
+                                        </div>
+                                        <div className="add-to-cart">
+                                            <div className="cart-img"><img src={bhunaMurgh} alt="bhuna Murgh" /></div>
+                                            <button className="btn btn--primary btn--cart d-flex jc-center"><span>+</span><span>Add</span></button>
+                                        </div>
+                                    </div>
+
+                                    <div className="card d-flex jc-space-between py-4">
+                                        <div className="card-content mr-4">
+                                            <h5 className="card-title fw-500">Dum Gosht</h5>
+                                            <h6 className="text-light-small">Mutton Biryani, Boneless - Serves 4-5</h6>
+                                            <p className="title-sm my-1">₹1033</p>
+                                            <p className="text-light-small">In this most enigmatic & treasured recipe of Behrouz.. Read More</p>
+                                        </div>
+                                        <div className="add-to-cart">
+                                            <div className="cart-img"><img src={bhunaMurgh} alt="bhuna Murgh" /></div>
+                                            <button className="btn btn--primary btn--cart d-flex jc-center"><span>+</span><span>Add</span></button>
+                                        </div>
+                                    </div>
+                                </div>)}
                             </div>
                         </div>
                     </div>
