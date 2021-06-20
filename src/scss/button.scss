@@ -1,0 +1,52 @@
+@import "./variables.scss";
+
+.btn{
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-family: 'IBM Plex Sans', sans-serif;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    &--primary{
+        min-height: 30px;
+        border-radius: 8px;
+        padding: 6px 12px;
+        font-size: 14px;
+        font-weight: 500;
+        color: $primary-color;
+    }
+    &--wide{
+        justify-content: center;
+        align-items: center;
+        min-height: 40px;
+        width: 100%;
+        border: 1px solid $primary-color;
+        font-weight: 700;
+    }
+    &--cart{
+        background-color: $primary-color;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        min-height: 28px;
+        width: 72px;
+        border-radius: 4px;
+
+    }
+    &--link{
+        border: none;
+        background-color: transparent;
+        font-size: 14px;
+        font-weight: 700;
+    }
+    &--swipe{
+        height: 54px;
+        background-color: $primary-color;
+        width: 100%;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+    }
+}

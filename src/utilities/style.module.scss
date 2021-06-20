@@ -1,0 +1,68 @@
+
+@import "../scss/variables.scss";
+
+.toast{
+    position: sticky;
+    left: 20px;
+    bottom: -80px;
+    width: 320px;
+    height: 46px;
+    background-color: $primary-color;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 0 14px;
+    box-sizing: border-box;
+}
+
+.cart{
+    position: sticky;
+    bottom: -260px;
+    background: #fff;
+    min-height: 260px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.app_cart_restaurant_logo{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateY(-30px) translateX(-50%);
+    background: #fff;
+}
+.app_cart_details{
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+.app_cart_acc{
+    color:rgba(0, 0, 0, 0.5)
+}
+.app_cart_total{
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 700;
+    color: #2A3733;
+}
+.app_cart{
+    position: absolute;
+    width: 100%;
+    bottom: 24px;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+.btn_swipe{
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    left: 10px;
+    background: #FEBBBB;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
